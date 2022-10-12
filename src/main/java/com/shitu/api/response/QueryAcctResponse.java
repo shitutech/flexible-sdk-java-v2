@@ -1,8 +1,5 @@
 package com.shitu.api.response;
 
-import java.util.List;
-import java.util.StringJoiner;
-
 /**
  * 用户信息查询接口响应信息
  *
@@ -21,15 +18,6 @@ public final class QueryAcctResponse extends AbstractApiResponse {
     private String idCard;
 
     /**
-     * 业务类型(查询类型1返回)
-     * 1: 委托代征
-     * 2: 个体户注册
-     * 3: 自然人代开
-     * 4: 临时税务登记
-     */
-    private List<String> busTypeList;
-
-    /**
      * 开户行编号(查询类型1返回)
      */
     private String bankNo;
@@ -45,18 +33,11 @@ public final class QueryAcctResponse extends AbstractApiResponse {
      * 银行预留手机号(查询类型1返回)
      */
     private String bankPhone;
+
     /**
-     * 账户状态 (查询类型2返回)
-     * 0: 未开通
-     * 1: 开通中
-     * 2: 开通成功
-     * 3: 开通失败
+     * 会员系统ID
      */
-    private String acctStatus;
-    /**
-     * 会员ID (查询类型3返回)
-     */
-    private String memberId;
+    private String systemId;
 
     public String getName() {
         return name;
@@ -72,14 +53,6 @@ public final class QueryAcctResponse extends AbstractApiResponse {
 
     public void setIdCard(String idCard) {
         this.idCard = idCard;
-    }
-
-    public List<String> getBusTypeList() {
-        return busTypeList;
-    }
-
-    public void setBusTypeList(List<String> busTypeList) {
-        this.busTypeList = busTypeList;
     }
 
     public String getBankNo() {
@@ -114,34 +87,18 @@ public final class QueryAcctResponse extends AbstractApiResponse {
         this.bankPhone = bankPhone;
     }
 
-    public String getAcctStatus() {
-        return acctStatus;
+    public String getSystemId() {
+        return systemId;
     }
 
-    public void setAcctStatus(String acctStatus) {
-        this.acctStatus = acctStatus;
-    }
-
-    public String getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
+    public void setSystemId(String systemId) {
+        this.systemId = systemId;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", QueryAcctResponse.class.getSimpleName() + "[", "]")
-                .add("name='" + name + "'")
-                .add("idCard='" + idCard + "'")
-                .add("busTypeList=" + busTypeList)
-                .add("bankNo='" + bankNo + "'")
-                .add("bankName='" + bankName + "'")
-                .add("cardNo='" + cardNo + "'")
-                .add("bankPhone='" + bankPhone + "'")
-                .add("acctStatus='" + acctStatus + "'")
-                .add("memberId='" + memberId + "'")
-                .toString();
+        return "QueryAcctResponse [name=" + name + ", idCard=" + idCard + ", bankNo=" + bankNo + ", bankName="
+                + bankName + ", cardNo=" + cardNo + ", bankPhone=" + bankPhone + ", systemId=" + systemId + "]";
     }
+
 }
