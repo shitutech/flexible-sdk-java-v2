@@ -33,6 +33,7 @@ public class TestApi {
     private static final String MERCHANT_NO = "AXXXXX-XXXXXX-XXXXXX";
     private static final String PROVIDER_NO = "SXXXXX";
     private static final String PRODUCT_NO = "PXXXXXXXX";
+    private static final String TASK_CODE = "SXXXXXXXXX";
     private static final String PRIVATE_KEY = "MIIEvQI*****=";
     private static final String SYSTEM_PUBLIC_KEY = "MIIBI*********QAB";
 
